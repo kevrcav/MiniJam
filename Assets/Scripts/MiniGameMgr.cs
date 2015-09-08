@@ -59,6 +59,7 @@ public class MiniGameMgr : MonoBehaviour {
    
    void Instance_OnDoorsOpened()
    {
+       HUDMgr.Instance.SetTimerOn(true);
    }
 
    void Instance_OnDoorsClosed()
@@ -115,19 +116,15 @@ public class MiniGameMgr : MonoBehaviour {
    {
       lastGameWon = won;
       loadingDoors.CloseDoors();
+      HUDMgr.Instance.SetTimerOn(false);
       if (won)
       {
-          ++score;
-          if (score % speedUpFrequency == 0)
-          {
+          if (++score % speedUpFrequency == 0)
               IncreaseSpeed();
-
-          }
       }
       else
       {
-          lives--;
-          if (lives <= 0)
+          if (--lives <= 0)
               GameOver();
       }
    }

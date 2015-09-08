@@ -50,6 +50,7 @@ public class MiniGame : MonoBehaviour {
       if (playing)
       {
          currentTime -= Time.deltaTime;
+         HUDMgr.Instance.SetTimeRemaining(currentTime);
          if (currentTime <= 0)
          {
             if (winOnTimeOut)

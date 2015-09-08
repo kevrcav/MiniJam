@@ -5,7 +5,6 @@ using UnityEditor;
 public class LoadingDoors : MonoBehaviour {
 
    Animator anim;
-   MiniGameMgr manager;
 
    public delegate void LoadingDoorStateChangedHandler();
    public LoadingDoorStateChangedHandler OnDoorsOpened;
@@ -14,17 +13,16 @@ public class LoadingDoors : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
       anim = GetComponent<Animator>();
-      anim.SetTrigger("open");
-      manager = FindObjectOfType<MiniGameMgr>();
+      anim.Play("Close", 0, 1);
 	}
 	
 	public void OpenDoors () 
    {
-       anim.SetTrigger("open");
+       anim.Play("Open");
 	}
    public void CloseDoors()
    {
-       anim.SetTrigger("close");
+       anim.Play("Close");
    }
 
    public void DoorsOpened()

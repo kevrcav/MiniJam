@@ -9,6 +9,7 @@ public class HUDMgr : MonoBehaviour {
    public Text lives;
    public Text score;
    public Text message;
+   public Text timer;
 
    static string livestext = "LIVES: ";
    static string scoretext = "SCORE: ";
@@ -36,5 +37,15 @@ public class HUDMgr : MonoBehaviour {
       score.gameObject.SetActive(false);
       message.text = gameMessage;
       message.gameObject.SetActive(true);
+   }
+
+   public void SetTimeRemaining(float timeRemaning)
+   {
+       timer.text = Mathf.CeilToInt(timeRemaning).ToString();
+   }
+
+   public void SetTimerOn(bool on)
+   {
+       timer.gameObject.SetActive(on);
    }
 }
