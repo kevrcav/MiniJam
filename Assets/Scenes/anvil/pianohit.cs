@@ -26,6 +26,7 @@ public class pianohit : MonoBehaviour {
             hit = true;
             GetComponent<SpriteRenderer>().enabled = false;
             crush.enabled = true;
+            GetComponent<AudioSource>().Play();
         }
     }
 }
