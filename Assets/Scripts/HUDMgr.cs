@@ -10,6 +10,9 @@ public class HUDMgr : MonoBehaviour {
    public Text score;
    public Text message;
 
+   static string livestext = "LIVES: ";
+   static string scoretext = "SCORE: ";
+
    public float bridgeTime;
 
    void Awake()
@@ -19,9 +22,9 @@ public class HUDMgr : MonoBehaviour {
 
    public void StartBridgeSequence(string gameMessage)
    {
-      lives.text = MiniGameMgr.Instance.lives.ToString();
+      lives.text = livestext + MiniGameMgr.Instance.lives.ToString();
       lives.gameObject.SetActive(true);
-      score.text = MiniGameMgr.Instance.score.ToString();
+      score.text = scoretext + MiniGameMgr.Instance.score.ToString();
       score.gameObject.SetActive(true);
       message.text = gameMessage;
       message.gameObject.SetActive(true);
