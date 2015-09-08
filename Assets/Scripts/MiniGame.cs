@@ -9,8 +9,8 @@ public class MiniGame : MonoBehaviour {
    public bool winOnTimeOut;
 
    float currentTime;
-   bool playing;
-   bool won;
+   bool playing = true;
+   bool won = false;
 
    public string instruction;
    public string[] completeLines;
@@ -28,6 +28,7 @@ public class MiniGame : MonoBehaviour {
       if (!playing) return;
       MiniGameMgr.Instance.Report(true);
       playing = false;
+      won = true;
    }
 
    public void ReportLose()
