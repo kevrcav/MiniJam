@@ -11,9 +11,16 @@ public class stairsgame : MonoBehaviour {
     public SpriteRenderer lose;
     public SpriteRenderer falling;
 
+    public AudioClip winSound;
+    public AudioClip loseSound;
+
+    AudioSource aSource;
+
+    bool done = false;
+
 	// Use this for initialization
 	void Start () {
-	
+        aSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -29,17 +36,22 @@ public class stairsgame : MonoBehaviour {
             }
         }
 
-        if (gameTimer >= 4)
+        if (gameTimer >= 4 && !done)
         {
+            done = true;
             falling.enabled = false;
             if (won)
             {
                 win.enabled = true;
+                aSource.clip = winSound;
+                aSource.Play();
                 MiniGame.Instance.ReportWin();
             }
             else
             {
                 lose.enabled = true;
+                aSource.clip = loseSound;
+                aSource.Play();
                 MiniGame.Instance.ReportLose();
             }
         }
