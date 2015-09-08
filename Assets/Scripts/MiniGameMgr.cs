@@ -144,9 +144,14 @@ public class MiniGameMgr : MonoBehaviour {
        Time.timeScale = 0;
    }
 
+   void OnGUI()
+   {
+       Restart();
+   }
+
    void Restart()
    {
-       if (Input.GetKeyDown("ESCAPE") || Input.GetKeyDown("DELETE") || Input.GetKeyDown("ENTER"))
+       if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.Return))
        {
            Application.LoadLevel(0);
        }
