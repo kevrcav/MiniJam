@@ -115,10 +115,21 @@ public class MiniGameMgr : MonoBehaviour {
    {
       lastGameWon = won;
       loadingDoors.CloseDoors();
-      if (won && ++score % speedUpFrequency == 0)
-         IncreaseSpeed();
-      else if (--lives <= 0)
-         GameOver();
+      if (won)
+      {
+          ++score;
+          if (score % speedUpFrequency == 0)
+          {
+              IncreaseSpeed();
+
+          }
+      }
+      else
+      {
+          lives--;
+          if (lives <= 0)
+              GameOver();
+      }
    }
 
    void IncreaseSpeed()
@@ -129,6 +140,20 @@ public class MiniGameMgr : MonoBehaviour {
 
    void GameOver()
    {
+       HUDMgr.Instance.message.text = "YOU LOSE! PRESS ENTER.";
+       Time.timeScale = 0;
+   }
 
+   void OnGUI()
+   {
+       Restart();
+   }
+
+   void Restart()
+   {
+       if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.Return))
+       {
+           Application.LoadLevel(0);
+       }
    }
 }
