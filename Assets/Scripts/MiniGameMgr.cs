@@ -34,6 +34,8 @@ public class MiniGameMgr : MonoBehaviour {
    {
       LoadingMgr.Instance.OnSceneLoaded += Instance_OnSceneLoaded;
       LoadingMgr.Instance.OnSceneUnloaded += Instance_OnSceneUnloaded;
+      loadingDoors.OnDoorsOpened += Instance_OnDoorsOpened;
+      loadingDoors.OnDoorsClosed += Instance_OnDoorsClosed;
 
       ChooseMinigame();
       lastGameUnloaded = true;
@@ -113,10 +115,21 @@ public class MiniGameMgr : MonoBehaviour {
    {
       lastGameWon = won;
       loadingDoors.CloseDoors();
-      if (won && ++score % speedUpFrequency == 0)
-         IncreaseSpeed();
-      else if (--lives <= 0)
-         GameOver();
+      if (won)
+      {
+          ++score;
+          if (score % speedUpFrequency == 0)
+          {
+              IncreaseSpeed();
+
+          }
+      }
+      else
+      {
+          lives--;
+          if (lives <= 0)
+              GameOver();
+      }
    }
 
    void IncreaseSpeed()
@@ -127,6 +140,15 @@ public class MiniGameMgr : MonoBehaviour {
 
    void GameOver()
    {
+       HUDMgr.Instance.message.text = "YOU LOSE! PRESS ENTER.";
+       Time.timeScale = 0;
+   }
 
+   void Restart()
+   {
+       if (Input.GetKeyDown("ESCAPE") || Input.GetKeyDown("DELETE") || Input.GetKeyDown("ENTER"))
+       {
+           Application.LoadLevel(0);
+       }
    }
 }
