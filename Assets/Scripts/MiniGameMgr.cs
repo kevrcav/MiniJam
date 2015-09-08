@@ -34,8 +34,6 @@ public class MiniGameMgr : MonoBehaviour {
    {
       LoadingMgr.Instance.OnSceneLoaded += Instance_OnSceneLoaded;
       LoadingMgr.Instance.OnSceneUnloaded += Instance_OnSceneUnloaded;
-      loadingDoors.OnDoorsOpened += Instance_OnDoorsOpened;
-      loadingDoors.OnDoorsClosed += Instance_OnDoorsClosed;
 
       ChooseMinigame();
       lastGameUnloaded = true;

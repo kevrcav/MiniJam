@@ -5,35 +5,22 @@ using UnityEditor;
 public class LoadingDoors : MonoBehaviour {
 
    Animator anim;
+   MiniGameMgr manager;
 
-   public delegate void LoadingDoorStateChangedHandler();
-   public LoadingDoorStateChangedHandler OnDoorsOpened;
-   public LoadingDoorStateChangedHandler OnDoorsClosed;
 
 	// Use this for initialization
 	void Start () {
       anim = GetComponent<Animator>();
-      anim.Play("CloseDoors", 0, 1);
+      anim.SetTrigger("open");
+      manager = FindObjectOfType<MiniGameMgr>();
 	}
 	
 	public void OpenDoors () 
    {
-      anim.Play("OpenDoors");
+       anim.SetTrigger("open");
 	}
    public void CloseDoors()
    {
-      anim.Play("CloseDoors");
-   }
-
-   public void DoorsOpened()
-   {
-      if (OnDoorsOpened != null)
-         OnDoorsOpened();
-   }
-
-   public void DoorsClosed()
-   {
-      if (OnDoorsClosed != null)
-         OnDoorsClosed();
+       anim.SetTrigger("close");
    }
 }
