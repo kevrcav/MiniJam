@@ -30,11 +30,13 @@ public class FallingTree : MonoBehaviour {
             if (bys.allBystandersOffscreen())
             {
                 transform.parent.GetComponent<MiniGame>().ReportWin();
+                FindObjectOfType<AudioManager>().playWinSound();
                 Debug.Log("win");
             }
             else
             {
                 transform.parent.GetComponent<MiniGame>().ReportLose();
+                FindObjectOfType<AudioManager>().playLoseSound();
                 Debug.Log("lose");
             }
             face.sprite = dizzy;

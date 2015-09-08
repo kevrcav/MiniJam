@@ -30,6 +30,7 @@ public class Bystander : MonoBehaviour {
         if(sinVal < 0.05f && !tickUp)
         {
             tick2++;
+            FindObjectOfType<AudioManager>().playJumpSound();
             tickUp = true;
         }
         if(sinVal > 0.95f)
