@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/BenjiNS/BenjiNS.unity
   - enabled: 1
     path: Assets/Scenes/ThisISMYMINIGAMETHEREAREMANYLIKEITBUTTHISONEISMINE!/ThisISMYMINIGAMETHEREAREMANYLIKEITBUTTHISONEISMINE!.unity
+  - enabled: 1
+    path: Assets/Scenes/lifealert/lifealert.unity
