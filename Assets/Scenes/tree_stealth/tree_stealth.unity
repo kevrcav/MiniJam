@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c215e1b98e3dd546892b90331e96ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 3
-  pushForce: 3
+  fallSpeed: 1
+  pushForce: 1
   face: {fileID: 1138353288}
   smug: {fileID: 21300000, guid: 6ba62d779691e0545a3cf99f09f36618, type: 3}
   spooked: {fileID: 21300000, guid: 92983fca6a62935418bc123f364884d1, type: 3}

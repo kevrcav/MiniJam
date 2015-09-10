@@ -150,7 +150,9 @@ public class MiniGameMgr : MonoBehaviour {
    {
        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.Return))
        {
-           Application.LoadLevel(0);
+          Time.timeScale = 1;
+          lives = 4;
+          score = 0;
        }
    }
 }

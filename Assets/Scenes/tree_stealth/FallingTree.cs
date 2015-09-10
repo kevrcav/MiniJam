@@ -24,7 +24,7 @@ public class FallingTree : MonoBehaviour {
         {
             face.sprite = smug;
         }
-        else if (zAngle > 90 || zAngle < -90)
+        else if ((zAngle > 0 && zAngle < 270) || zAngle < -90)
         {
             if (gameOver) return;
             if (bys.allBystandersOffscreen())

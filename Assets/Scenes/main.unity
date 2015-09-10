@@ -438,7 +438,12 @@ MonoBehaviour:
   score: 0
   lives: 4
   miniGames:
-  - demo
+  - anvil
+  - stairs
+  - tree_stealth
+  - towerfallDECENSION
+  - BenjiNS
+  - ThisISMYMINIGAMETHEREAREMANYLIKEITBUTTHISONEISMINE!
   completeLines:
   - Nice Job!
   - Wow!
@@ -631,7 +636,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
