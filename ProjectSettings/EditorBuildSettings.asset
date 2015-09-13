@@ -25,3 +25,5 @@ EditorBuildSettings:
     path: Assets/Scenes/lifealert/lifealert.unity
   - enabled: 1
     path: Assets/Scenes/HopScotch2/HopScotch2.unity
+  - enabled: 1
+    path: Assets/Scenes/praisejeebus/praisejeebus.unity
